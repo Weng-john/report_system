@@ -21,11 +21,10 @@ function Confirm(){
         return;
     }
     
-    var message= murderer + "," + color;
-    Send(message, 0);
+    Send(murderer, color, 0);
 }
 
-function Send(message, index){
+function Send(murderer, color, index){
     document.getElementById("submitTime").value= 1;
     $.ajax({
         type:'get',
@@ -33,7 +32,8 @@ function Send(message, index){
         timeout: 5000,
         url: url[index%2],
         data:  {
-            'message' : message
+            'murderer': murderer,
+            'color': color
         },
         datatype:'json',
         success: function(respond){
@@ -47,7 +47,7 @@ function Send(message, index){
                 alert("這段時間中，總部已經找出真正的兇手及拆除炸彈的顏色順序。\n恭喜，你的推論正確，很感謝你的協助。");
         },
         error: function(XMLHttpRequest, textStatus, errorThrown){
-            Send(data, index+1);
+            Send(murderer, color, 1);
         }
     });
 }
