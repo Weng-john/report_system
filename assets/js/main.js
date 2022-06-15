@@ -1,4 +1,4 @@
-var url= ["https://script.google.com/macros/s/AKfycbxelSTN1z8xtjsGYkjiNjL-DijupbSyxk6fDyzFv2lGGa1qi3qY/exec", "https://script.google.com/macros/s/AKfycbzTWz3l_s9zBAJNBwtCk6vq66gGpM8IrQjPtlw8/exec"];
+var url= ["https://script.google.com/macros/s/AKfycbzzxeNclfL39dpKD3rPKFNHZz5zCLnwXLuTBr1jbaYmwDBcrbSa/exec", "https://script.google.com/macros/s/AKfycbwNjytDQVAaGOYKescVPRpXH5K3R1WYKJuxJoqX-8iLzrDBYOv_/exec"];
 
 function Confirm(){
     var murderer= document.getElementById("murderer").value;
@@ -37,9 +37,13 @@ function Send(message, index){
         },
         datatype:'json',
         success: function(respond){
-            if(respond=="WA")                       //解出錯誤的答案
-                alert("這段時間中，總部已經找出真正的兇手及拆除炸彈的顏色順序。\n很抱歉，你的推論是錯誤的。");
-            else                                    //解出正確的答案
+            if(respond=="murdererError")                    //解出錯誤的兇手
+                alert("這段時間，總部已經找出真正的兇手及拆除炸彈的顏色順序。\n結果很抱歉，兇手的推論錯誤，但顏色順序正確。\n謝謝你的協助。");
+            else if(respond=="orderError")                  //解出錯誤的顏色順序
+                alert("這段時間，總部已經找出真正的兇手及拆除炸彈的顏色順序。\n結果很抱歉，顏色順序的推論錯誤，但兇手正確。\n謝謝你的協助。");
+            else if(respond=="murdererErrororderError")     //兇手、顏色順序皆錯誤
+                alert("這段時間，總部已經找出真正的兇手及拆除炸彈的顏色順序。\n結果很抱歉，兇手與顏色順序的推論皆錯誤\n謝謝你的協助。");
+            else                                            //解出正確的答案
                 alert("這段時間中，總部已經找出真正的兇手及拆除炸彈的顏色順序。\n恭喜，你的推論正確，很感謝你的協助。");
         },
         error: function(XMLHttpRequest, textStatus, errorThrown){
