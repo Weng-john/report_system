@@ -24,9 +24,30 @@
     				        <hr/>
 						</header>
                         <div class="profile">
-                            <input type="hidden" id="submitTime">
-                            <label>推斷出的兇手是誰？</label>
-				            <input type="text" name="murderer" id="murderer" placeholder="請輸入你認為的兇手">
+                            <div class="murder">
+                                <label>推斷出的兇手是誰？</label>
+                                <div class="select">
+                                    <input type="radio" id="secondSon" name="suspect" value="二兒子"/><label for="secondSon">二兒子</label>
+                                    <br>
+                                    <input type="radio" id="thirdSon" name="suspect"  value="老三"/><label for="thirdSon">老三</label>
+                                    <br>
+                                    <input type="radio" id="servant" name="suspect"  value="僕人"/><label for="servant">僕人</label>
+                                    <br>
+                                    <input type="radio" id="cook" name="suspect"  value="廚師"/><label for="cook">廚師</label>
+                                </div>
+                            </div><!--
+                            <div class="color">
+                                <ul id="items-list" class="moveable">
+                                    <div class="move" id="selected"></div>
+                                    <div class="move" id="unselected">
+                                        <li>One</li>
+                                        <li>Two</li>
+                                        <li>Three</li>
+                                        <li>Four</li>
+                                    </div>
+                                </ul>
+                                <div></div>
+                            </div>-->
                             <label>顏色順序為何？</label>
 				            <input type="text" name="color" id="color" placeholder="請輸入顏色順序">
                         </div>

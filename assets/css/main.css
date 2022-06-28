@@ -1080,3 +1080,7 @@ textarea {
 .profile{
     text-align: left;
 }
+
+.select{
+    padding: 0 0 0 10%;
+}
