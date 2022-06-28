@@ -26,7 +26,7 @@
                         <div class="profile">
                             <div class="murder">
                                 <label>推斷出的兇手是誰？</label>
-                                <div class="select">
+                                <div class="checkField">
                                     <input type="radio" id="secondSon" name="suspect" value="二兒子"/><label for="secondSon">二兒子</label>
                                     <br>
                                     <input type="radio" id="thirdSon" name="suspect"  value="老三"/><label for="thirdSon">老三</label>
@@ -35,21 +35,24 @@
                                     <br>
                                     <input type="radio" id="cook" name="suspect"  value="廚師"/><label for="cook">廚師</label>
                                 </div>
-                            </div><!--
-                            <div class="color">
-                                <ul id="items-list" class="moveable">
-                                    <div class="move" id="selected"></div>
-                                    <div class="move" id="unselected">
-                                        <li>One</li>
-                                        <li>Two</li>
-                                        <li>Three</li>
-                                        <li>Four</li>
-                                    </div>
-                                </ul>
-                                <div></div>
-                            </div>-->
+                            </div>
                             <label>顏色順序為何？</label>
-				            <input type="text" name="color" id="color" placeholder="請輸入顏色順序">
+                            <div class="colorField">
+                                <div class="order" id="selected">
+                                </div>
+                                <div class="option" id="unselected">
+                                    <input type="button" class="color" draggable="true" value="紅色">
+                                    <input type="button" class="color" draggable="true" value="橘色">
+                                    <input type="button" class="color" draggable="true" value="黃色">
+                                    <input type="button" class="color" draggable="true" value="綠色">
+                                    <input type="button" class="color" draggable="true" value="藍色">
+                                    <input type="button" class="color" draggable="true" value="紫色">
+                                    <input type="button" class="color" draggable="true" value="粉色">
+                                    <input type="button" class="color" draggable="true" value="棕色">
+                                    <input type="button" class="color" draggable="true" value="黑色">
+                                    <input type="button" class="color" draggable="true" value="灰色">
+                                </div>
+                            </div>
                         </div>
                         <br>
                         <div class="buttonArea" id="buttonArea">

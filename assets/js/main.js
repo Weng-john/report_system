@@ -24,18 +24,11 @@ function setCookie(freq){
 
 function Confirm(){
     var murderer= $("input[name='suspect']:checked").val();
-    var color= $("#color").val();
-    $("#color").val("")
     $("input[name='suspect']:checked").prop('checked', false);
-    
-    if(typeof(murderer)=="undefined"||color==""){   //確認是否兩格都有填
-        alert("兩個條件皆填寫才能回報喔！");
-        return;
-    }    
-                                                    //確認是否送出資料
-    var timeCheck= confirm("因事態緊急，此系統只限回報一次，確定要送出資料嗎？");
-    if(!timeCheck)
-        return;
+    var color=[];
+    $("#selected input[type='button']").each(function(){
+        color.push(this.value);
+    });
     
     var cookieCon= readCookie();
     var submitTime= cookieCon["submitTimes"];
@@ -43,6 +36,15 @@ function Confirm(){
         alert("很抱歉，已超過回報次數");
         return;
     }
+    
+    if(typeof(murderer)=="undefined"||!(color.length)){   //確認是否兩格都有填
+        alert("兩個條件皆填寫才能回報喔！");
+        return;
+    }
+                                                    //確認是否送出資料
+    var timeCheck= confirm("因事態緊急，此系統只限回報一次，確定要送出資料嗎？");
+    if(!timeCheck)
+        return;
     
     setCookie(1);
     Send(murderer, color, 0);
