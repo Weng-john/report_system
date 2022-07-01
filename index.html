@@ -38,19 +38,19 @@
                             </div>
                             <label>顏色順序為何？</label>
                             <div class="colorField">
-                                <div class="order" id="selected">
+                                <div class="dragzone order" id="selected" data-role="drag-drop-countainer">
                                 </div>
-                                <div class="option" id="unselected">
-                                    <input type="button" class="color" draggable="true" value="紅色">
-                                    <input type="button" class="color" draggable="true" value="橘色">
-                                    <input type="button" class="color" draggable="true" value="黃色">
-                                    <input type="button" class="color" draggable="true" value="綠色">
-                                    <input type="button" class="color" draggable="true" value="藍色">
-                                    <input type="button" class="color" draggable="true" value="紫色">
-                                    <input type="button" class="color" draggable="true" value="粉色">
-                                    <input type="button" class="color" draggable="true" value="棕色">
-                                    <input type="button" class="color" draggable="true" value="黑色">
-                                    <input type="button" class="color" draggable="true" value="灰色">
+                                <div class="dragzone option" id="unselected" data-role="drag-drop-countainer">
+                                    <input type="button" class="color" id="Cea3947" value="紅色">
+                                    <input type="button" class="color" id="Cffab33" value="橘色">
+                                    <input type="button" class="color" id="Cfefe8a" value="黃色">
+                                    <input type="button" class="color" id="C7be46c" value="綠色">
+                                    <input type="button" class="color" id="C6cb1e4" value="藍色">
+                                    <input type="button" class="color" id="Cb96ce4" value="紫色">
+                                    <input type="button" class="color" id="Ceca2a8" value="粉色">
+                                    <input type="button" class="color" id="Cb3966b" value="棕色">
+                                    <input type="button" class="color" id="C080808" value="黑色">
+                                    <input type="button" class="color" id="C969696" value="灰色">
                                 </div>
                             </div>
                         </div>
@@ -123,4 +123,11 @@
 	</body>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>`
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/drag.js"></script>
+    <script>
+        $('input[type="button"]').each(function(){
+            var draw= this.id.split("C")
+            document.getElementById(this.id).style.backgroundColor= ('#'+draw[1]);
+        })
+    </script>
 </html>
